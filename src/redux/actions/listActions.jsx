@@ -1,32 +1,34 @@
-export const putList = (amount) => {
+export const putList = (title) => {
     return {
       type: "ADD_ITEM", 
-      payload: amount,
+     
+      id: Date.now(),
+      title: title
+      
 
     };
   };
   
 
-
-
-
 export const deleteItem= (id) => {
     return {
       type: "DELETE_ITEM",
-      payload: id,
+      id: id,
     };
   };
 
-export const Todo= () => {
+export const Todo= (id,completed) => {
     return {
       type: "TODO",
-      payload: "todo",
+      id: id,
+      completed: completed
     };
 };
-export const Done= () => {
+export const Done= (id,completed) => {
     return {
       type: "DONE",
-      payload: "done",
+      id: id,
+      completed: completed
     };
   };
 
