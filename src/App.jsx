@@ -30,7 +30,7 @@ function App() {
                 <input
                   type="checkbox"
                   value={value.completed}
-                  checked={value.completed}
+                  checked={value.completed === "Todo" ? false: true}
                   onChange={() => {
                     if (list[index].completed === "Todo") {
                       dispatchList(completedItem((value.completed = "Done")));

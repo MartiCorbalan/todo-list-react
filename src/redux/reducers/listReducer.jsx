@@ -1,5 +1,8 @@
 const initalState = {
-  list: [],
+  // Compruebo si hay items y si es así los cojo del LocalStorage, sino, devuelvo vacio el array
+  list: window.localStorage.getItem("items")
+    ? JSON.parse(window.localStorage.getItem("items"))
+    : [],
 };
 
 const listReducer = (state = initalState, action) => {
@@ -7,10 +10,17 @@ const listReducer = (state = initalState, action) => {
 
   switch (action.type) {
     case "ADD_ITEM":
+      // Añado todo lo que tenga el state al localStorage y añado el último item
+      window.localStorage.setItem(
+        "items",
+        JSON.stringify([
+          ...state.list,
+          { id: action.id, title: action.title, completed: "Todo" },
+        ])
+      );
       return {
         list: [
           ...state.list,
-          /* { id: action.id, title: action.title, completed: false }, */
           { id: action.id, title: action.title, completed: "Todo" },
         ],
       };
