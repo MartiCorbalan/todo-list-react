@@ -14,11 +14,11 @@ export const deleteItem = (id) => {
   };
 };
 
-export const completedItem = (id, completed) => {
+export const completedItem = (completed) => {
   console.log("completed =" + completed);
   return {
     type: "COMPLETED_ITEM",
-    id: id,
+
     completed: completed,
   };
 };

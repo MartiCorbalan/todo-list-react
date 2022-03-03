@@ -16,26 +16,16 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
+          Llista de tasques
+          <br />
+          <br />
           {console.log(list)}
           {list.map((value, index) => {
             return (
-              <div className="tareas" key={value.id}>
-                <p id="tarea">{value.title}</p>
+              <div className="tareas">
+                <p>{value.title}</p>
                 &nbsp;&nbsp;
-                <p
-                /* onClick={() => {
-                    if (
-                      dispatchList(completedItem((value.completed = "todo")))
-                    ) {
-                      dispatchList(completedItem((value.completed = "done")));
-                    } else {
-                      dispatchList(completedItem((value.completed = "todo")));
-                    }
-                   
-                  }} */
-                >
-                  {value.completed}
-                </p>
+                <p>{value.completed}</p>
                 &nbsp;&nbsp;
                 <input
                   type="checkbox"
@@ -49,7 +39,7 @@ function App() {
                     }
                   }}
                 />
-                {/* <button className='todo btn btn-primary mt-1' onClick={() => dispatchList(Todo(list[index].id))}>{}</button> */}
+                &nbsp;
                 <button
                   className="btn btn-danger mt-1 boton_delete"
                   onClick={() => dispatchList(deleteItem(list[index]))}
@@ -62,7 +52,7 @@ function App() {
           })}
         </div>
         <br />
-        <input id="tasca" type="text" ref={inputRef}></input>
+        <input type="text" ref={inputRef}></input>
         <br />
         <button
           className="btn btn-primary"
