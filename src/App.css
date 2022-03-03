@@ -37,22 +37,14 @@
   }
 }
 
-
-.tareas{
+.tareas {
   background-color: blue;
-  width: 300px;
+  width: auto;
   height: 50px;
   display: flex;
   border: red 2px solid;
-  
 }
-.botondelete{
-  margin: 3px auto 0 220px;
-
-  position: fixed;
-
-}
-.todo{
-  margin: 0 auto 0 130px;
-  position: fixed;
+.boton_delete {
+  height: 40px;
+  width: 70px;
 }
