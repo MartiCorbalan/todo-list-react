@@ -25,14 +25,14 @@ const listReducer = (state = initalState, action) => {
 
       };
 
-    case "TODO":
-     return {
-       
-     }
+      case "COMPLETED_ITEM":
+        return {
+          list: state.list.map((item) =>
+          //si el id del item es igual al que le pasamos, li passem el completat
+            item.id === action.id ? { ...item, completed: !item.completed } : item
+          ),
+        };
      
-    case "DONE":
-      return action.payload
-
     case "DELETE_ALL":
       return {
         ...state,

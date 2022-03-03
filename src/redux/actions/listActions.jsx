@@ -17,20 +17,13 @@ export const deleteItem= (id) => {
     };
   };
 
-export const Todo= (id,completed) => {
+export const completedItem= (id,completed) => {
     return {
-      type: "TODO",
+      type: "COMPLETED_ITEM",
       id: id,
       completed: completed
     };
 };
-export const Done= (id,completed) => {
-    return {
-      type: "DONE",
-      id: id,
-      completed: completed
-    };
-  };
 
 
 export const deleteAllTodos = ()=> {
