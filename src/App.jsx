@@ -53,7 +53,12 @@ function App() {
         </div>
         <br />
         <input type="text" ref={inputRef}></input>
-        <input type="text" placeholder="Search task"></input>
+        <input type="text" placeholder="Search task" onChange={(e) =>dispatchList(toggleTodo(e.target.value))}></input>
+        <input
+          id="tasca"
+          type="text"
+          onChange={(e) => dispatchList(toggleTodo(e.target.value))}
+        />
         <br />
         <button
           className="btn btn-primary"

@@ -32,6 +32,6 @@ export const deleteAllTodos = () => {
 export const toggleTodo = (title) => {
   return {
     type: "TOGGLE_TODO",
-    title,
+    title: title
   };
 };

@@ -27,13 +27,27 @@ const listReducer = (state = initalState, action) => {
       };
 
     case "TOGGLE_TODO":
-      return state.map((todo) =>
-        todo.title === action.title
-          ? { ...todo, completed: !todo.completed }
-          : todo
-      );
-
+      console.log(action.title)
+      if (action.title === "") {
+        return {
+          list: JSON.parse(window.localStorage.getItem("items")),
+        };
+      } else {
+    //filtramos la lista por cada objeto/item, si el item se incluye con el titulo que le pasas es igual, devuelve la lista con lo que tenga
+        return {  
+          list:state.list.filter(
+            (title) => title.title.toLowerCase().includes(action.title.toLowerCase()) 
+          ),
+        }
+    };
     case "DELETE_ITEM":
+      window.localStorage.setItem(
+        "items",
+        JSON.stringify((state.list.filter(
+            (id) => id !== action.id 
+          )),
+        )
+      );
       return {
         //si la id es igual a la id hace el filter
         list: (state = state.list.filter(
