@@ -40,18 +40,12 @@ function App() {
                   }}
                 />
                 &nbsp;
-                <img
-                  src="/papelera.png"
-                  alt=""
-                  className="img-delete"
-                  onClick={() => dispatchList(deleteItem(list[index]))}
-                />
-                {/* <button
+                <button
                   className="btn btn-danger mt-1 boton_delete"
                   onClick={() => dispatchList(deleteItem(list[index]))}
                 >
                   Borrar
-                </button> */}
+                </button>
                 &nbsp;
               </div>
             );
