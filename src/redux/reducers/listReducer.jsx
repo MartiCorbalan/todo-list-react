@@ -28,6 +28,7 @@ const listReducer = (state = initalState, action) => {
 
     case "TOGGLE_TODO":
       console.log(action.title)
+      //si esta vacio, me devuelve toda la lista del localStorage
       if (action.title === "") {
         return {
           list: JSON.parse(window.localStorage.getItem("items")),
