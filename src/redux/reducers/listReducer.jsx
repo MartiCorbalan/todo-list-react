@@ -21,9 +21,18 @@ const listReducer = (state = initalState, action) => {
       return {
         list: [
           ...state.list,
+          /* { id: action.id, title: action.title, completed: false }, */
           { id: action.id, title: action.title, completed: "Todo" },
         ],
       };
+
+    case "TOGGLE_TODO":
+      return state.map((todo) =>
+        todo.title === action.title
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      );
+
     case "DELETE_ITEM":
       return {
         //si la id es igual a la id hace el filter
@@ -31,7 +40,6 @@ const listReducer = (state = initalState, action) => {
           (id) => id !== action.id /*  && action.completed */
         )),
       };
-
     case "COMPLETED_ITEM":
       return {
         list: state.list.map((item) =>
@@ -39,7 +47,6 @@ const listReducer = (state = initalState, action) => {
           item.id === action.id ? { ...item, completed: !item.completed } : item
         ),
       };
-
     case "DELETE_ALL":
       return {
         ...state,
@@ -49,5 +56,4 @@ const listReducer = (state = initalState, action) => {
       return state;
   }
 };
-
 export default listReducer;

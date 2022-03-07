@@ -28,3 +28,10 @@ export const deleteAllTodos = () => {
     type: "DELETE_ALL",
   };
 };
+
+export const toggleTodo = (title) => {
+  return {
+    type: "TOGGLE_TODO",
+    title,
+  };
+};

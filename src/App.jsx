@@ -6,12 +6,12 @@ import {
   deleteItem,
   deleteAllTodos,
   completedItem,
+  toggleTodo,
 } from "./redux/actions/listActions";
 function App() {
   const list = useSelector((store) => store.listReducer.list);
   const dispatchList = useDispatch();
   const inputRef = useRef();
-
   return (
     <div className="App">
       <header className="App-header">
@@ -53,6 +53,7 @@ function App() {
         </div>
         <br />
         <input type="text" ref={inputRef}></input>
+        <input type="text" placeholder="Search task"></input>
         <br />
         <button
           className="btn btn-primary"
@@ -79,5 +80,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
