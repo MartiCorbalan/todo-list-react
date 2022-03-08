@@ -40,15 +40,21 @@
 .tareas {
   background-color: blue;
   width: auto;
-  height: 50px;
-  display: flex;
+
   border: red 2px solid;
 }
 .boton_delete {
   height: 40px;
   width: 70px;
 }
-.img-delete {
-  width: 30px;
-  height: 40px;
+
+.date {
+  width: 100%;
+}
+
+.contingut-todo {
+  display: flex;
+}
+.span {
+  font-size: 23px;
 }
